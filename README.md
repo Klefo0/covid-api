@@ -1,29 +1,29 @@
 <div align="center">
-	<h1>NovelCovid</h1>
+	<h1>WorldVNCovid</h1>
 	<h6>(aka covidapi)</h6>
-	<strong> <i>A JavaScript Wrapper for the <a href="https://disease.sh">novelCOVID API</a></i></strong><br><br>
+	<strong> <i>Trình gói JavaScript cho <a href="https://disease.sh">WorldVNCovid API</a></i></strong><br><br>
 
 ![GitHub top language](https://img.shields.io/github/languages/top/disease-sh/node-api)
-![Snyk Vulnerabilities for npm scoped package](https://img.shields.io/snyk/vulnerabilities/npm/novelcovid)
-![GitHub package.json version](https://img.shields.io/github/package-json/v/novelcovid/node-api)
-![GitHub last commit](https://img.shields.io/github/last-commit/disease-sh/node-api)<br>
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/novelcovid)
-![npm](https://img.shields.io/npm/dw/novelcovid)<br>
+![Snyk Vulnerabilities for npm scoped package](https://img.shields.io/snyk/vulnerabilities/npm/worldvncovid-api)
+<!-- ![GitHub package.json version](https://img.shields.io/github/package-json/v/worldvncovid-api/node-api) -->
+<!-- ![GitHub last commit](https://img.shields.io/github/last-commit/disease-sh/node-api)<br>
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/worldvncovid-api)
+![npm](https://img.shields.io/npm/dw/worldvncovid-api)<br>
 ![GitHub issues](https://img.shields.io/github/issues-raw/disease-sh/node-api)
-![License](https://img.shields.io/github/license/disease-sh/node-api)
+![License](https://img.shields.io/github/license/disease-sh/node-api) -->
 ![Profile visits](https://badges.pufler.dev/visits/disease-sh/node-api)
 
 </div>
 <br>
 
 ## Disclaimer
-This wrapper is only for COVID-19 related data from the [Open Disease API](https://disease.sh).
+Chỉ dành cho dữ liệu liên quan đến COVID-19 từ API [Open Disease API](https://disease.sh).
 
 ## Installation
 
 [![NPM](https://nodei.co/npm/worldvncovid-api.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/worldvncovid-api)
 
-Using NPM:
+Sử dụng NPM:
 
 ```bash
 npm i -s worldvncovid-api
@@ -31,14 +31,15 @@ npm i -s worldvncovid-api
 
 ## Remarks
 
-This wrapper uses the '@aero/centra' package to send requests.
-It is way faster than any other request package other than 'http.request' package.
+Chỉ sử dụng package '@aero/centra'.<br>
+Là Một Version Mới Về NovelCovid bởi [Github](https://github.com/disease-sh/node-api) .
 
-The **allowNull** parameter is now available for the `all`, `countries`, `continents`, `states` and `gov` endpoints. 
+Tham số **allowNull** hiện có sẵn cho `all`, `countries`, `continents`, `states` và `gov` điểm cuối.
+WorldVNCovid-API sẽ thêm tham số `vaccine`
 
 ## Usage
 
-All shown examples use Promises but can also await/async to fetch data using NovelCovid.
+Tất cả các ví dụ được hiển thị đều sử dụng Promises nhưng cũng có thể chờ/không đồng bộ để tìm nạp dữ liệu bằng WorldVNCovid-API.
 
 ### Add to project 
 
@@ -267,4 +268,15 @@ api.gov().then(console.log)
 
 // this prints the data for a specified country
 api.gov('austria').then(console.log)
+```
+
+### Vaccine 
+
+```js
+// this prints a list of available country names
+api.vaccine.countries().then(console.log)
+
+// this prints a list of available subregions for a specified country
+api.vaccine.subregions('vietnam').then(console.log)
+
 ```
