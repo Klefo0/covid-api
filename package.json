@@ -1,6 +1,6 @@
 {
-  "name": "novelcovid",
-  "version": "3.0.2",
+  "name": "covid-api",
+  "version": "1.0.0",
   "description": "An API wrapper to get information about COVID-19.",
   "keywords": [
     "coronavirus",
@@ -9,12 +9,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NovelCOVID/node-api.git"
+    "url": "git+https://github.com/DiozVN/covid-api.git"
   },
   "bugs": {
-    "url": "https://github.com/NovelCOVID/node-api/issues"
+    "url": "https://github.com/DiozVN/covid-api/issues"
   },
-  "homepage": "https://github.com/NovelCOVID/node-api#readme",
+  "homepage": "https://github.com/DiozVN/covid-api/#README.md",
   "main": "index.js",
   "dependencies": {
     "@aero/centra": "^1.0.3"
@@ -29,5 +29,6 @@
     "test": "mocha ./index.spec.js --exit --t 90000"
   },
   "author": "puf17640",
-  "license": "WTFPL"
+  "license": "MIT",
+  "types": "./index.d.ts"
 }

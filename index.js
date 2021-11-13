@@ -1,7 +1,7 @@
 const fetch = require('@aero/centra'),
       curSettings = { baseUrl: 'https://disease.sh' },
       fetchJson = (path) => fetch(`${curSettings.baseUrl}/${path}`).json(),
-      yesterday = {}, twoDaysAgo = {}, jhucsse = {}, historical = {}, nyt = {}, apple = {}
+      yesterday = {}, twoDaysAgo = {}, jhucsse = {}, historical = {}, nyt = {}, apple = {}, vaccine = {}
 
 const createPath = (opts, path) => {
   if(opts.sort || String(opts.strict) !== 'undefined' || opts.yesterday || String(opts.allowNull) !== 'undefined') {
