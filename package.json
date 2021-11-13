@@ -1,5 +1,5 @@
 {
-  "name": "covid-api",
+  "name": "worldvncovid-api",
   "version": "1.0.0",
   "description": "An API wrapper to get information about COVID-19.",
   "keywords": [

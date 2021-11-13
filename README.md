@@ -21,12 +21,12 @@ This wrapper is only for COVID-19 related data from the [Open Disease API](https
 
 ## Installation
 
-[![NPM](https://nodei.co/npm/novelcovid.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/novelcovid/)
+[![NPM](https://nodei.co/npm/worldvncovid-api.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/worldvncovid-api)
 
 Using NPM:
 
 ```bash
-npm i -s novelcovid
+npm i -s worldvncovid-api
 ```
 
 ## Remarks
