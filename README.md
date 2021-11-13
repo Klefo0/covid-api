@@ -163,7 +163,7 @@ api.states({sort:'cases'}).then(console.log)
 // in ra một tiểu bang cụ thể của Hoa Kì và dữ liệu của nơi đó
 api.states({state:'michigan'}).then(console.log)
 
-// this prints an array of specified states and their data
+// in ra một mảng cho một bang cụ thể và dữ liệu trong bang đó
 api.states({state:['michigan','new york']}).then(console.log)
 ```
 
