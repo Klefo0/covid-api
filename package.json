@@ -1,6 +1,6 @@
 {
-  "name": "covidvn-api",
-  "version": "1.0.0",
+  "name": "covidvn",
+  "version": "1.0.2",
   "description": "Lấy API để nhận thông tin về COVID-19.",
   "keywords": [
     "coronavirus",
