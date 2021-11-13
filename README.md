@@ -16,10 +16,10 @@
 </div>
 <br>
 
-## Disclaimer
-Chỉ dành cho dữ liệu liên quan đến COVID-19 từ API [Open Disease API](https://disease.sh).
+## Từ chối các trách nhiệm liên quan
+Đây là các dữ liệu liên quan đến COVID-19 được lấy từ API của [Open Disease API](https://disease.sh).
 
-## Installation
+## Cài đặt
 
 [![NPM](https://nodei.co/npm/covidvn.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/covidvn)
 
@@ -29,18 +29,18 @@ Sử dụng NPM:
 npm i -s covidvn-api
 ```
 
-## Remarks
+## Lưu ý
 
 Chỉ sử dụng package '@aero/centra'.<br>
 
 Tham số **allowNull** hiện có sẵn cho `all`, `countries`, `continents`, `states` và `gov` điểm cuối.
 CovidVN-API sắp cật nhập sẽ thêm tham số `vaccine`
 
-## Usage
+## Cách dùng
 
 Tất cả các ví dụ được hiển thị đều sử dụng Promises nhưng cũng có thể chờ/không đồng bộ để tìm nạp dữ liệu bằng CovidVN-API.
 
-### Add to project 
+### Thêm vào project của bạn 
 
 ```js
 const api = require('convid-api');
@@ -51,7 +51,7 @@ api.settings({
 })
 ```
 
-### Summary
+### Dữ liệu tổng quát
 
 ```js
 // cái này in ra một bản tóm tắt dữ liệu toàn cầu
@@ -64,7 +64,7 @@ api.yesterday.all().then(console.log)
 api.twoDaysAgo.all().then(console.log)
 ```
 
-### Countries
+### Theo quốc gia
 
 ```js
 // in ra các quốc gia bị nhiễm covid
@@ -73,14 +73,14 @@ api.countries().then(console.log)
 // in ra các quốc gia bị nhiễm covid được sắp xếp theo các trường hợp
 api.countries({sort:'cases'}).then(console.log) 
 
-// cin ra quốc gia cụ thể
+// in ra quốc gia cụ thể
 api.countries({country:'austria'}).then(console.log) 
 
 // in ra các quốc gia cụ thể
 api.countries({country:['austria','china']}).then(console.log) 
 ```
 
-### Yesterday (Countries)
+### Dữ liệu của ngày hôm qua (Theo từng quốc gia)
 
 ```js
 // in ra các quốc gia bị nhiễm với dữ liệu của từ ngày vừa qua
@@ -96,7 +96,7 @@ api.yesterday.countries({country:'austria'}).then(console.log)
 api.yesterday.countries({country:['austria','china']}).then(console.log)
 ```
 
-### Two Days Ago (Countries)
+### Dữ liệu của hai ngày trước (Theo từng quốc gia)
 
 ```js
 // in ra các quốc gia bị nhiễm với dữ liệu từ hai ngày trước
@@ -105,27 +105,27 @@ api.twoDaysAgo.countries().then(console.log)
 // in ra các quốc gia bị nhiễm với dữ liệu từ hai ngày trước được sắp xếp theo các trường hợp
 api.twoDaysAgo.countries({sort:'cases'}).then(console.log)
 
-// in ra quốc gia cụ thể with data from two days ago
+// in ra dữ liệu của 1 quốc gia với dữ liệu từ hai ngày trước
 api.twoDaysAgo.countries({country:'austria'}).then(console.log)
 
-// in ra các quốc gia cụ thể with data from two days ago
+// in ra dữ liệu quốc gia  với dữ liệu từ hai ngày trước
 api.twoDaysAgo.countries({country:['austria','china']}).then(console.log)
 ```
 
-### Continents
+### Theo Lục địa
 
 ```js
-// in ra một mảng của tất cả các lục địa bị nhiễm
+// in ra một mảng chứa tất cả các lục địa có người bị nhiễm
 api.continents().then(console.log) 
 
-// in ra một mảng của tất cả các lục địa bị nhiễm được sắp xếp theo các trường hợp
+// in ra một mảng của tất cả các lục địa bị nhiễm được sắp xếp theo số trường hợp mắc
 api.continents({sort:'cases'}).then(console.log) 
 
-// in ra một lục địa cụ thể
+// in ra dữ liệu của một lục địa cụ thể
 api.continents({continent:'europe'}).then(console.log)
 ```
 
-### Yesterday (Continents)
+### Dữ liệu của ngày hôm qua (Theo từng lục địa)
 
 ```js
 // in ra một mảng của tất cả các lục địa bị nhiễm với dữ liệu từ ngày vừa qua
@@ -138,7 +138,7 @@ api.yesterday.continents({sort:'cases'}).then(console.log)
 api.yesterday.continents({continent:'europe'}).then(console.log)
 ```
 
-### Two Days Ago (Continents)
+### Dữ liệu của ngày hôm qua (Theo từng quốc gia)
 
 ```js
 // in ra một mảng của tất cả các lục địa bị nhiễm với dữ liệu từ hai ngày vừa qua
@@ -151,37 +151,7 @@ api.twoDaysAgo.continents({sort:'cases'}).then(console.log)
 api.twoDaysAgo.continents({continent:'europe'}).then(console.log)
 ```
 
-### States
 
-```js
-// in ra một loạt các tiểu bang của Hoa Kỳ và dữ liệu của họ
-api.states().then(console.log)
-
-// in ra một loạt các tiểu bang của Hoa Kỳ và dữ liệu của họ được sắp xếp theo các trường hợp
-api.states({sort:'cases'}).then(console.log)
-
-// in ra một tiểu bang cụ thể của Hoa Kì và dữ liệu của nơi đó
-api.states({state:'michigan'}).then(console.log)
-
-// this prints an array of specified states and their data
-api.states({state:['michigan','new york']}).then(console.log)
-```
-
-### Yesterday (States)
-
-```js
-// in ra một loạt các tiểu bang của Hoa Kỳ với dữ liệu của ngày vừa qua
-api.yesterday.states().then(console.log)
-
-// in ra một loạt các tiểu bang của Hoa Kỳ với dữ liệu của ngày vừa qua được sắp xếp theo các trường hợp
-api.yesterday.states({sort:'cases'}).then(console.log)
-
-// in ra một tiểu bang cụ thể của Hoa Kỳ với dữ liệu của ngày vừa qua
-api.yesterday.states({state:'michigan'}).then(console.log)
-
-// in ra các tiểu bang cụ thể của Hoa Kỳ với dữ liệu của ngày vừa qua
-api.yesterday.states({state:['michigan','new york']}).then(console.log)
-```
 
 ### JHUCSSE
 
@@ -199,7 +169,7 @@ api.jhucsse.counties({county:'abbeville'}).then(console.log)
 api.jhucsse.counties({county:['abbeville','acadia']}).then(console.log)
 ```
 
-### Historical
+### Theo dòng thời gian
 
 ```js
 // in dòng thời gian toàn cầu
@@ -222,25 +192,6 @@ api.historical.countries({country:'china', province:'hubei'}).then(console.log)
 
 // in một tỉnh cụ thể của một quốc gia cụ thể và dòng thời gian của họ
 api.historical.countries({country:'china', province:['hubei','anhui']}).then(console.log)
-```
-
-### New York Times Data (USA)
-
-```js
-// in ra một dòng thời gian dữ liệu từ Hoa Kỳ
-api.nyt.usa().then(console.log)
-
-// in ra một loạt các mốc thời gian của tất cả các tiểu bang của Hoa Kỳ bị nhiễm bệnh
-api.nyt.states().then(console.log)
-
-// in ra một dòng thời gian của một tiểu bang Hoa Kỳ cụ thể
-api.nyt.states({state:'illinois'}).then(console.log)
-
-// in ra một loạt các mốc thời gian cho tất cả các hạt của Hoa Kỳ bị nhiễm
-api.nyt.counties().then(console.log)
-
-// in ra một loạt các mốc thời gian của các tiểu bang của một quận cụ thể của Hoa Kỳ
-api.nyt.counties({county:'cook'}).then(console.log)
 ```
 
 ### Mobility Data (Apple)
