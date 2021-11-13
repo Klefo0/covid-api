@@ -1,11 +1,14 @@
 {
-  "name": "worldvncovid-api",
+  "name": "covidvn-api",
   "version": "1.0.0",
-  "description": "An API wrapper to get information about COVID-19.",
+  "description": "Lấy API để nhận thông tin về COVID-19.",
   "keywords": [
     "coronavirus",
     "wrapper",
-    "api"
+    "api",
+    "novelcovid",
+    "covid-api",
+    "covid"
   ],
   "repository": {
     "type": "git",
@@ -28,7 +31,7 @@
     "declaration": "rm -f index.d.ts && tsc",
     "test": "mocha ./index.spec.js --exit --t 90000"
   },
-  "author": "puf17640",
-  "license": "MIT",
+  "author": "puf17640 & DiozVN",
+  "license": "WTFPL",
   "types": "./index.d.ts"
 }

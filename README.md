@@ -1,14 +1,14 @@
 <div align="center">
-	<h1>WorldVNCovid</h1>
+	<h1>CovidVN API</h1>
 	<h6>(aka covidapi)</h6>
-	<strong> <i>Trình gói JavaScript cho <a href="https://disease.sh">WorldVNCovid API</a></i></strong><br><br>
+	<strong> <i>Trình gói JavaScript cho <a href="https://disease.sh">CovidVN API</a></i></strong><br><br>
 
 ![GitHub top language](https://img.shields.io/github/languages/top/disease-sh/node-api)
-![Snyk Vulnerabilities for npm scoped package](https://img.shields.io/snyk/vulnerabilities/npm/worldvncovid-api)
-<!-- ![GitHub package.json version](https://img.shields.io/github/package-json/v/worldvncovid-api/node-api) -->
+![Snyk Vulnerabilities for npm scoped package](https://img.shields.io/snyk/vulnerabilities/npm/covidvn-api)
+<!-- ![GitHub package.json version](https://img.shields.io/github/package-json/v/covidvn-api/node-api) -->
 <!-- ![GitHub last commit](https://img.shields.io/github/last-commit/disease-sh/node-api)<br>
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/worldvncovid-api)
-![npm](https://img.shields.io/npm/dw/worldvncovid-api)<br>
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/covidvn-api)
+![npm](https://img.shields.io/npm/dw/covidvn-api)<br>
 ![GitHub issues](https://img.shields.io/github/issues-raw/disease-sh/node-api)
 ![License](https://img.shields.io/github/license/disease-sh/node-api) -->
 ![Profile visits](https://badges.pufler.dev/visits/disease-sh/node-api)
@@ -21,12 +21,12 @@ Chỉ dành cho dữ liệu liên quan đến COVID-19 từ API [Open Disease AP
 
 ## Installation
 
-[![NPM](https://nodei.co/npm/worldvncovid-api.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/worldvncovid-api)
+[![NPM](https://nodei.co/npm/covidvn-api.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/covidvn-api)
 
 Sử dụng NPM:
 
 ```bash
-npm i -s worldvncovid-api
+npm i -s covidvn-api
 ```
 
 ## Remarks
@@ -35,16 +35,16 @@ Chỉ sử dụng package '@aero/centra'.<br>
 Là Một Version Mới Về NovelCovid bởi [Github](https://github.com/disease-sh/node-api) .
 
 Tham số **allowNull** hiện có sẵn cho `all`, `countries`, `continents`, `states` và `gov` điểm cuối.
-WorldVNCovid-API sẽ thêm tham số `vaccine`
+CovidVN-API sẽ thêm tham số `vaccine`
 
 ## Usage
 
-Tất cả các ví dụ được hiển thị đều sử dụng Promises nhưng cũng có thể chờ/không đồng bộ để tìm nạp dữ liệu bằng WorldVNCovid-API.
+Tất cả các ví dụ được hiển thị đều sử dụng Promises nhưng cũng có thể chờ/không đồng bộ để tìm nạp dữ liệu bằng CovidVN-API.
 
 ### Add to project 
 
 ```js
-const api = require('novelcovid');
+const api = require('convid-api');
 
 // you can choose which URL to use, this will not change the behaviour of the API
 api.settings({
