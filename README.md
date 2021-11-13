@@ -32,10 +32,9 @@ npm i -s covidvn-api
 ## Remarks
 
 Chỉ sử dụng package '@aero/centra'.<br>
-Là Một Version Mới Về NovelCovid bởi [Github](https://github.com/disease-sh/node-api) .
 
 Tham số **allowNull** hiện có sẵn cho `all`, `countries`, `continents`, `states` và `gov` điểm cuối.
-CovidVN-API sẽ thêm tham số `vaccine`
+CovidVN-API sắp cật nhập sẽ thêm tham số `vaccine`
 
 ## Usage
 
@@ -46,7 +45,7 @@ Tất cả các ví dụ được hiển thị đều sử dụng Promises nhưn
 ```js
 const api = require('convid-api');
 
-// you can choose which URL to use, this will not change the behaviour of the API
+// Bạn có thể chọn URL nào để sử dụng, điều này sẽ không thay đổi hoạt động của API
 api.settings({
     baseUrl: 'https://disease.sh' | 'https://api.caw.sh' | 'https://corona.lmao.ninja'
 })
@@ -55,113 +54,113 @@ api.settings({
 ### Summary
 
 ```js
-// this prints a summary of global data
+// cái này in ra một bản tóm tắt dữ liệu toàn cầu
 api.all().then(console.log)
 
-// this prints a summary of global data with yesterdays data
+// cái này in ra một bản tóm tắt dữ liệu toàn cầu với dữ liệu từ ngày vừa qua
 api.yesterday.all().then(console.log)
 
-// this prints a summary of global data with data from two days ago
+// cái này in ra một bản tóm tắt dữ liệu toàn cầu với dữ liệu từ hai ngày trước
 api.twoDaysAgo.all().then(console.log)
 ```
 
 ### Countries
 
 ```js
-// this prints an array of call infected countries
+// in ra các quốc gia bị nhiễm covid
 api.countries().then(console.log) 
 
-// this prints an array of call infected countries sorted by cases
+// in ra các quốc gia bị nhiễm covid được sắp xếp theo các trường hợp
 api.countries({sort:'cases'}).then(console.log) 
 
-// this prints a specified country
+// cin ra quốc gia cụ thể
 api.countries({country:'austria'}).then(console.log) 
 
-// this prints an array of specified countries
+// in ra các quốc gia cụ thể
 api.countries({country:['austria','china']}).then(console.log) 
 ```
 
 ### Yesterday (Countries)
 
 ```js
-// this prints an array of all infected countries with yesterdays data
+// in ra các quốc gia bị nhiễm với dữ liệu của từ ngày vừa qua
 api.yesterday.countries().then(console.log)
 
-// this prints an array of all infected countries with yesterdays data sorted by todays cases
+// in ra các quốc gia bị nhiễm với dữ liệu của từ ngày vừa qua được sắp xếp theo các trường hợp
 api.yesterday.countries({sort:'cases'}).then(console.log)
 
-// this prints a specified country with yesterdays data
+// in ra quốc gia cụ thể của từ ngày vừa qua
 api.yesterday.countries({country:'austria'}).then(console.log)
 
-// this prints an array of specified countries with yesterdays data
+// in ra các quốc gia cụ thể của từ ngày vừa qua
 api.yesterday.countries({country:['austria','china']}).then(console.log)
 ```
 
 ### Two Days Ago (Countries)
 
 ```js
-// this prints an array of all infected countries with data from two days ago
+// in ra các quốc gia bị nhiễm với dữ liệu từ hai ngày trước
 api.twoDaysAgo.countries().then(console.log)
 
-// this prints an array of all infected countries with data from two days ago sorted by todays cases
+// in ra các quốc gia bị nhiễm với dữ liệu từ hai ngày trước được sắp xếp theo các trường hợp
 api.twoDaysAgo.countries({sort:'cases'}).then(console.log)
 
-// this prints a specified country with data from two days ago
+// in ra quốc gia cụ thể with data from two days ago
 api.twoDaysAgo.countries({country:'austria'}).then(console.log)
 
-// this prints an array of specified countries with data from two days ago
+// in ra các quốc gia cụ thể with data from two days ago
 api.twoDaysAgo.countries({country:['austria','china']}).then(console.log)
 ```
 
 ### Continents
 
 ```js
-// this prints an array of all infected continents
+// in ra một mảng của tất cả các lục địa bị nhiễm
 api.continents().then(console.log) 
 
-// this prints an array of all infected continents sorted by cases
+// in ra một mảng của tất cả các lục địa bị nhiễm được sắp xếp theo các trường hợp
 api.continents({sort:'cases'}).then(console.log) 
 
-// this prints a specified continent
+// in ra một lục địa cụ thể
 api.continents({continent:'europe'}).then(console.log)
 ```
 
 ### Yesterday (Continents)
 
 ```js
-// this prints an array of all infected continents with yesterdays data
+// in ra một mảng của tất cả các lục địa bị nhiễm với dữ liệu từ ngày vừa qua
 api.yesterday.continents().then(console.log)
 
-// this prints an array of all infected continents with yesterdays data sorted by todays cases
+// in ra một mảng của tất cả các lục địa bị nhiễm với dữ liệu của từ ngày vừa qua được sắp xếp theo các trường hợp
 api.yesterday.continents({sort:'cases'}).then(console.log)
 
-// this prints a specified continent with yesterdays data
+// in ra một lục địa cụ thể với dữ liệu từ ngày vừa qua
 api.yesterday.continents({continent:'europe'}).then(console.log)
 ```
 
 ### Two Days Ago (Continents)
 
 ```js
-// this prints an array of all infected continents with data from two days ago
+// in ra một mảng của tất cả các lục địa bị nhiễm với dữ liệu từ hai ngày vừa qua
 api.twoDaysAgo.continents().then(console.log)
 
-// this prints an array of all infected continents with data from two days ago sorted by todays cases
+// in ra một mảng của tất cả các lục địa bị nhiễm với dữ liệu của từ hai ngày vừa qua được sắp xếp theo các trường hợp
 api.twoDaysAgo.continents({sort:'cases'}).then(console.log)
 
-// this prints a specified continent with data from two days ago
+// in ra một lục địa cụ thể với dữ liệu từ hai ngày vừa qua
 api.twoDaysAgo.continents({continent:'europe'}).then(console.log)
 ```
 
 ### States
 
 ```js
-// this prints an array of US states and their data
+// in ra một loạt các tiểu bang của Hoa Kỳ và dữ liệu của họ
 api.states().then(console.log)
 
-// this prints an array of US states and their data sorted by cases
+// in ra một loạt các tiểu bang của Hoa Kỳ và dữ liệu của họ được sắp xếp theo các trường hợp
 api.states({sort:'cases'}).then(console.log)
 
-// this prints a specified state and its data
+// in ra một tiểu bang cụ thể của Hoa Kì và dữ liệu của nơi đó
 api.states({state:'michigan'}).then(console.log)
 
 // this prints an array of specified states and their data
@@ -171,112 +170,101 @@ api.states({state:['michigan','new york']}).then(console.log)
 ### Yesterday (States)
 
 ```js
-// this prints an array of US states with yesterdays data
+// in ra một loạt các tiểu bang của Hoa Kỳ với dữ liệu của ngày vừa qua
 api.yesterday.states().then(console.log)
 
-// this prints an array of US states with yesterdays data sorted by cases
+// in ra một loạt các tiểu bang của Hoa Kỳ với dữ liệu của ngày vừa qua được sắp xếp theo các trường hợp
 api.yesterday.states({sort:'cases'}).then(console.log)
 
-// this prints a specified state with yesterdays data
+// in ra một tiểu bang cụ thể của Hoa Kỳ với dữ liệu của ngày vừa qua
 api.yesterday.states({state:'michigan'}).then(console.log)
 
-// this prints an array of specified states with yesterdays data
+// in ra các tiểu bang cụ thể của Hoa Kỳ với dữ liệu của ngày vừa qua
 api.yesterday.states({state:['michigan','new york']}).then(console.log)
 ```
 
 ### JHUCSSE
 
 ```js
-// this prints an array of infected countries
+// in ra một loạt các quốc gia bị nhiễm
 api.jhucsse.all().then(console.log)
 
-// this prints an array of infected US counties 
+// in ra một quận của quốc gia bị nhiễm
 api.jhucsse.counties().then(console.log)
 
-// this prints an array of infected provinces of a specified US county 
+// in ra một loạt các tỉnh bị nhiễm của một quận cụ thể của quốc gia bị nhiễm
 api.jhucsse.counties({county:'abbeville'}).then(console.log)
 
-// this prints an object with the counties provinces as arrays
+// in các với các tỉnh của quận cụ thể của quốc gia bị nhiễm
 api.jhucsse.counties({county:['abbeville','acadia']}).then(console.log)
 ```
 
 ### Historical
 
 ```js
-// this prints the global timeline
+// in dòng thời gian toàn cầu
 api.historical.all().then(console.log)
 
-// this prints the global timeline for the last 10 days (use -1 to get all data)
+// in ra dòng thời gian toàn cầu trong 10 ngày qua (use -1 để lấy tất cả dữ liệu)
 api.historical.all().then(console.log)
 
-// this prints an array of infected countries and their timeline
+// in ra một loạt các quốc gia bị đánh giá và dòng thời gian của họ
 api.historical.countries().then(console.log)
 
-// this prints a specified country and its timeline
+// in ra quốc gia cụ thể và dòng thời gian của họ
 api.historical.countries({country:'china'}).then(console.log)
 
-// this prints a specified country and its timeline for the last 10 days (use -1 to get all data)
+// in ra quốc gia cụ thể và dòng thời gian của họ trong 10 ngày qua (use -1 để lấy tất cả dữ liệu)
 api.historical.countries({country:'china', days:10}).then(console.log)
 
-// this prints a specified province of a specified country and its timeline
+// in một tỉnh cụ thể của một quốc gia cụ thể và dòng thời gian của họ
 api.historical.countries({country:'china', province:'hubei'}).then(console.log)
 
-// this prints a specified province of a specified country and its timeline
+// in một tỉnh cụ thể của một quốc gia cụ thể và dòng thời gian của họ
 api.historical.countries({country:'china', province:['hubei','anhui']}).then(console.log)
 ```
 
 ### New York Times Data (USA)
 
 ```js
-// this prints a timeline of data from the US
+// in ra một dòng thời gian dữ liệu từ Hoa Kỳ
 api.nyt.usa().then(console.log)
 
-// this prints an array of timelines of all infected US states
+// in ra một loạt các mốc thời gian của tất cả các tiểu bang của Hoa Kỳ bị nhiễm bệnh
 api.nyt.states().then(console.log)
 
-// this prints a timeline of a specified US state
+// in ra một dòng thời gian của một tiểu bang Hoa Kỳ cụ thể
 api.nyt.states({state:'illinois'}).then(console.log)
 
-// this prints an array of timelines all infected US counties
+// in ra một loạt các mốc thời gian cho tất cả các hạt của Hoa Kỳ bị nhiễm
 api.nyt.counties().then(console.log)
 
-// this prints an array of timelines of states of a specified US county
+// in ra một loạt các mốc thời gian của các tiểu bang của một quận cụ thể của Hoa Kỳ
 api.nyt.counties({county:'cook'}).then(console.log)
 ```
 
 ### Mobility Data (Apple)
 
 ```js
-// this prints a list of available country names
+// in ra một danh sách các tên quốc gia có sẵn
 api.apple.countries().then(console.log)
 
-// this prints a list of available subregions for a specified country
+// in ra danh sách các tiểu vùng có sẵn cho một quốc gia cụ thể
 api.apple.subregions('austria').then(console.log)
 
-// this prints mobility data for a specified subregion of a country, all is used to query total data
+// in dữ liệu di động cho một tiểu vùng cụ thể của một quốc gia, tất cả được sử dụng để truy vấn tổng dữ liệu
 api.apple.mobilityData({country:'austria', subregion:'all'}).then(console.log)
 
-// this prints mobility data for multiple specified subregions of a country
+// in dữ liệu di động cho nhiều tiểu vùng cụ thể của một quốc gia
 api.apple.mobilityData({country:'austria', subregion:['vienna', 'salzburg']}).then(console.log)
 ```
 
 ### Official Government Data
 
 ```js
-// this prints a list of available country names
+// in ra một danh sách các tên quốc gia có sẵn
 api.gov().then(console.log)
 
-// this prints the data for a specified country
+// in dữ liệu cho một quốc gia cụ thể
 api.gov('austria').then(console.log)
-```
-
-### Vaccine 
-
-```js
-// this prints a list of available country names
-api.vaccine.countries().then(console.log)
-
-// this prints a list of available subregions for a specified country
-api.vaccine.subregions('vietnam').then(console.log)
-
 ```

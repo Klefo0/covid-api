@@ -270,14 +270,14 @@ apple.mobilityData = (opts = {}) => {
  */
 const gov = (country) => fetchJson(`v3/covid-19/gov/${country ? country : ''}`)
 
-vaccine.countries = () => fetchJson(`v3/covid-19/vaccine/coverage`)
-/**
- * Retrieve official government data
- * @param {string}  country         country name to be queried (empty to get an array of names)
- * @param {boolean} opts.allowNull  whether to allow null values (true) or automatically transform them to 0 (false)
- * @returns {object}                official government data
- */
-vaccine.subregions = (country) => fetchJson(`v3/covid-19/vaccine/coverage/${country ? country : ''}`)
+// vaccine.countries = () => fetchJson(`v3/covid-19/vaccine/coverage`)
+// /**
+//  * Retrieve official government data
+//  * @param {string}  country         country name to be queried (empty to get an array of names)
+//  * @param {boolean} opts.allowNull  whether to allow null values (true) or automatically transform them to 0 (false)
+//  * @returns {object}                official government data
+//  */
+// vaccine.subregions = (country) => fetchJson(`v3/covid-19/vaccine/coverage/${country ? country : ''}`)
 
 module.exports = {
   settings,
@@ -292,5 +292,5 @@ module.exports = {
   nyt,
   apple,
   gov,
-  vaccine
+  // vaccine
 }
